@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Particles/>
+    <div class="books">
+      <Home/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
+import Particles from "@/components/particles.vue";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {Home, Particles},
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+  background: #08121f;
+}
+body {
+  position: relative;
+  background: #4c1010;
+  height: 100%;
+}
+.books{
+  position: relative;
+  height: 100%;
 }
 </style>
