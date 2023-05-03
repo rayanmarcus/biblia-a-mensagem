@@ -1,25 +1,26 @@
 <template>
-  <div>
-    <div v-for="(book, index) in books" :key="index">
-      <h3>{{ book.title }} | Chapters: {{ book.chapters }}</h3>
+  <div class="container-fluid">
+    <div class="row mb-3">
+      <h1>Bíblia - A Mensagem</h1>
+    </div>
+    <div class="row">
+      <chapters/>
     </div>
   </div>
 </template>
 
 <script>
-import books from '@/assets/the-message-the-bible/the-message-the-bible-books.json'
+import Chapters from './Chapters.vue'
 
 export default {
+  components: { Chapters },
   name: 'HomePage',
-  data() {
-    return {
-      books: books.slice(0, 20)
-    }
-  },
 }
 </script>
 <style scoped>
-h3{
-  color: #fff;
+h1{
+  color: #d5d5d5;
+  font-size: 2.3em;
 }
 </style>
+

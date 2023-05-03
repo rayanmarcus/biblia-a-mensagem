@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Particles/>
+    <!-- <Particles/> -->
     <div class="books">
       <Home/>
     </div>
@@ -13,17 +13,20 @@ import Particles from "@/components/particles.vue";
 
 export default {
   name: 'App',
+  // eslint-disable-next-line vue/no-unused-components
   components: {Home, Particles},
 }
 </script>
 
-<style>
+<style lang="scss">
+@import './assets/styles/style.scss';
+
 html {
   background: #08121f;
 }
 body {
+  background: #08121f;
   position: relative;
-  background: #4c1010;
   height: 100%;
 }
 .books{
