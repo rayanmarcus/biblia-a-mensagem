@@ -4,14 +4,24 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 mb-3 text-center">
           <h2>Antigo testamento</h2>
-          <div class="col-md-9 mx-auto chapter-card" v-for="(book, index) in oldTestament" :key="index">
+          <div
+            class="col-md-9 mx-auto chapter-card"
+            v-for="(book, index) in oldTestament"
+            :key="index"
+            @click="openBook(book.title)"
+          >
             <h3>{{ book.title }}</h3>
             <span class="count-chapter">{{ book.chapters }} caps.</span>
           </div>
         </div>
         <div class="col-lg-6 mb-3 text-center">
           <h2>Novo testamento</h2>
-          <div class="col-md-9 mx-auto chapter-card" v-for="(book, index) in newTestament" :key="index">
+          <div
+            class="col-md-9 mx-auto chapter-card"
+            v-for="(book, index) in newTestament"
+            :key="index"
+            @click="openBook(book.title)"
+          >
             <h3>{{ book.title }}</h3>
             <span class="count-chapter">{{ book.chapters }} caps.</span>
           </div>
@@ -48,6 +58,11 @@ export default {
     console.log(books)
     this.oldTestament = books.slice(0, 39)
     this.newTestament = books.slice(39, 66)
+  },
+  methods: {
+    openBook(bookTitle) {
+      alert(bookTitle)
+    }
   }
 }
 </script>
